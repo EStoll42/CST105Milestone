@@ -73,7 +73,7 @@ public class Loan extends Account{
 		}else {
 	
 		System.out.printf("Loan balance: $%.2f in acct# %s\n",
-				this.getBalance() + this.getBalance() * this.getInterestRate()/12, this.getAccount());
+				this.getBalance() + (this.getBalance() * this.getInterestRate()/12), this.getAccount());
 		}
 	}
 	public Loan(double balance) {
