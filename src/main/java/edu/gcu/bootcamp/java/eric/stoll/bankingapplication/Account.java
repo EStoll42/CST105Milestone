@@ -47,7 +47,8 @@ public class Account implements Transaction {
 	 */
 	public void addToStatement(String account, double amount, String transactionType, String accountType) {
 		List<String> myList = getStatement();
-		myList.add(LocalDate.now() +"\t"+ account +" \t"+ amount +" \t"+ balance +" \t"+ transactionType +
+		DecimalFormat df = new DecimalFormat(".##");
+		myList.add(LocalDate.now() +"\t"+ account +" \t"+ df.format(amount) +" \t"+ df.format(balance) +" \t"+ transactionType +
 				" \t" + accountType);
 	}
 	/**
