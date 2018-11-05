@@ -47,32 +47,26 @@ public class Bank {
 	private void actionMenu (int option, Checking checking, Saving saving, Loan loan) {
 		Bank b = new Bank();
 
-		if (option == 1) {
-			checking.displayDepositChecking(checking);
-		}else if
-			(option == 2) {
-			saving.displayDepositSaving(saving);
-		}else if
-			(option == 3) {
-			checking.displayWithdrawChecking(checking);
-		}else if
-			(option == 4) {
-			saving.displayWithdrawSavings(saving);
-		}else if
-			(option == 5) {
-			b.displayBalanceScreen(checking, saving, loan);
-		}else if
-			(option == 6) {
-			loan.displayLoanPayment(loan);
-		}else if
-			(option == 7) {	
-			b.doEndOfMonth(checking, saving, loan);
-		}else if
-			(option == 9) {
-			b.displayExitScreen();
-		}else
-			System.out.println("Wrong Entry");
+		switch(option) {
+		case 1: checking.displayDepositChecking(checking);
+			break;
+		case 2: saving.displayDepositSaving(saving);
+			break;
+		case 3: checking.displayWithdrawChecking(checking);
+			break;
+		case 4: saving.displayWithdrawSavings(saving);
+			break;
+		case 5: b.displayBalanceScreen(checking, saving, loan);
+			break;
+		case 6: loan.displayLoanPayment(loan);
+			break;
+		case 7: b.doEndOfMonth(checking, saving, loan);
+			break;
+		case 9: b.displayExitScreen();
+			break;
+		default: System.out.println("Wrong Entry");
 		}
+	}
 	/**
 	 * This method displays the end of month of checking and saving and calculates
 	 * fees and interest for positive balances in savings
